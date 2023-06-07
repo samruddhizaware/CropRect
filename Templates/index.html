@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Crop Recommendation</title>
+</head>
+<body>
+    <!-- Image and text -->
+   <!-- Image and text -->
+    <nav class="navbar navbar-light bg-warning">
+        <a class="navbar-brand" href="#">
+        
+        <img src="https://th.bing.com/th/id/OIP.DZwrQAODWZrEHtRHza7TKQHaHa?w=188&h=188&c=7&o=5&dpr=1.25&pid=1.7" width="30" height="30"  class="d-inline-block align-top rounded-circle" alt="">
+        Crop Recommendation Dashboard
+        </a>
+    </nav>
+
+    <h1 class="display-5 text-center my-5">Know the best crop suited for your farm!</h1>
+    <form action="" method="POST">
+    <div class="row justify-content-center">
+        <div class="col-auto">
+        <table class="my-2">
+           
+                {% csrf_token %}
+                {{form}}
+            
+        </table>
+     <input type="submit" class='btn btn-success container text-center' >
+    </div>
+  </div>
+
+
+
+    {% comment %} <input type="submit" class='btn btn-success' > {% endcomment %}
+    <br>
+    
+    {% if final_predict%}
+        <div class='text-center'>
+        The best possible crop given the above parameters is {{final_predict}}.
+        </div>
+    {%endif%}  
+     
+</form>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
